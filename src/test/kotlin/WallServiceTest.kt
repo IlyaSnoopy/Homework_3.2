@@ -1,7 +1,13 @@
 import org.junit.Assert.*
+import org.junit.Before
 import org.junit.Test
 
 class WallServiceTest {
+
+    @Before
+    fun clearBeforeTest() {
+        WallService.clear()
+    }
 
     @Test
     fun `add should increment id`() {
