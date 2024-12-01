@@ -1,3 +1,5 @@
+import attachment.Photo
+import attachment.PhotoAttachment
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
@@ -13,7 +15,11 @@ class WallServiceTest {
     fun `add should increment id`() {
         val service = WallService
 
-        val actual = service.add(Post(id = 100_000))
+        val actual = service.add(Post(
+            id = 100_000,
+            attachments = listOf(PhotoAttachment(Photo(ownerId = 1_200)))
+            )
+        )
 
         assertTrue(actual.id != 0L)
     }
