@@ -1,3 +1,5 @@
+package post
+
 import attachment.Attachment
 
 data class Post(

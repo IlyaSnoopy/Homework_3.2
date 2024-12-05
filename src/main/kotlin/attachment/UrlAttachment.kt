@@ -2,6 +2,6 @@ package attachment
 
 data class UrlAttachment(
     val url: Url = Url()
-): Attachment {
+) : Attachment {
     override val type: String = "url"
 }
