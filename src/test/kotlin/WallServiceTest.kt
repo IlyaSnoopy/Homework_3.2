@@ -13,7 +13,7 @@ class WallServiceTest {
     }
 
     @Test
-    fun `add should increment id`() {
+    fun addShouldIncrementId() {
         val service = WallService
 
         val actual = service.add(
@@ -27,7 +27,7 @@ class WallServiceTest {
     }
 
     @Test
-    fun `update post not exist should returns false`() {
+    fun updatePostNotExistShouldReturnsFalse() {
         val service = WallService
 
         val actual = service.update(Post(id = 100_000))
@@ -36,7 +36,7 @@ class WallServiceTest {
     }
 
     @Test
-    fun `update post exist should returns true`() {
+    fun updatePostExistShouldReturnsTrue() {
         val service = WallService
 
         val added = service.add(Post(id = 100_000))
@@ -45,10 +45,12 @@ class WallServiceTest {
         assertTrue(actual)
     }
 
-    @Test(expected = PostNotFoundException::class)
+    @Test
     fun shouldThrow() {
         val comment = Comment(id = 1, text = "Комментарии к несуществующему посту")
-        WallService.createComment(postId = 1, comment)
+        assertThrows(PostNotFoundException::class.java) {
+            WallService.createComment(postId = 1, comment)
+        }
     }
 
     @Test
