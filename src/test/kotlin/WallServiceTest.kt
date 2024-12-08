@@ -1,9 +1,11 @@
 import attachment.Photo
 import attachment.PhotoAttachment
+import comment.Comment
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
 import post.Post
+import post.PostNotFoundException
 
 class WallServiceTest {
 

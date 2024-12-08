@@ -1,4 +1,6 @@
-class Main {
+fun main() {
 }
+
+
 
 
